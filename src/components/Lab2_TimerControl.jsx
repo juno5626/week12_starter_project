@@ -26,7 +26,6 @@ export default function Lab2TimerControl() {
     setRunning(false);
     setCount(0);
 
-    return()=>clearInterval(timeId);
   };
 
   return (
