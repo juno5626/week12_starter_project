@@ -29,26 +29,23 @@ export default function Lab2TimerControl() {
 
   return (
     <div>
-      <p className="status">상태: {running ? "Running" : "Stopped"}</p>
+      <p className="status">상태: {running ? "러닝" : "스탑드"}</p>
       <div className="count">{time}</div>
       <div className="controls">
         <button onClick={() => setRunning(true)} disabled={running}>
-          Start
+          스타트
         </button>
         <button
           className="secondary"
           onClick={() => setRunning(false)}
           disabled={!running}
         >
-          Stop
+          스탑
         </button>
         <button className="secondary" onClick={reset}>
-          Reset
+          리셋
         </button>
       </div>
-      <p className="hint">
-        Start/Stop 버튼의 State 변경과 Effect 실행의 관계를 확인하세요.
-      </p>
     </div>
   );
 }

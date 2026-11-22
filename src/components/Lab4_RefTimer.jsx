@@ -48,14 +48,13 @@ const time = timeCal(count);
 
   return (
     <div>
-      <p className="status">상태: {running ? 'Running' : 'Stopped'}</p>
+      <p className="status">상태: {running ? '러닝' : '스탑드'}</p>
       <div className="count">{time}</div>
       <div className="controls">
-        <button onClick={start} disabled={running}>Start</button>
-        <button className="secondary" onClick={stop} disabled={!running}>Stop</button>
-        <button className="secondary" onClick={reset}>Reset</button>
+        <button onClick={start} disabled={running}>스타트</button>
+        <button className="secondary" onClick={stop} disabled={!running}>스탑</button>
+        <button className="secondary" onClick={reset}>리셋</button>
       </div>
-      <p className="hint">Timer ID와 화면 표시용 상태의 차이를 설명해 보세요.</p>
     </div>
   );
 }
