@@ -17,13 +17,16 @@ export default function Lab2TimerControl() {
       setCount(prev=>prev+1);
 
     },1000);
-    return(clearInterval(timeId));
+    return() => clearInterval(timeId);
   }, [running]);
 
   const reset = () => {
     // TODO 4: 타이머를 멈추고 count를 0으로 초기화
-    clearInterval(timeId);
+    
+    setRunning(false);
     setCount(0);
+
+    return()=>clearInterval(timeId);
   };
 
   return (
