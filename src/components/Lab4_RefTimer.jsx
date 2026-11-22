@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import timeCal from "./timeCal";
 
 // LAB 4 (Slide 17): Timer ID를 useRef로 관리
 export default function Lab4RefTimer() {
@@ -6,7 +7,7 @@ export default function Lab4RefTimer() {
   const [running, setRunning] = useState(false);
   // TODO 1: 타이머 ID를 유지할 timerRef 생성 (초기값 null)
   const timerRef = useRef(null);
-
+const time = timeCal(count);
   const start = () => {
     // TODO 2: timerRef.current에 타이머가 있으면 중복 시작 방지
     if(timerRef.current){
@@ -48,7 +49,7 @@ export default function Lab4RefTimer() {
   return (
     <div>
       <p className="status">상태: {running ? 'Running' : 'Stopped'}</p>
-      <div className="count">{count}</div>
+      <div className="count">{time}</div>
       <div className="controls">
         <button onClick={start} disabled={running}>Start</button>
         <button className="secondary" onClick={stop} disabled={!running}>Stop</button>
